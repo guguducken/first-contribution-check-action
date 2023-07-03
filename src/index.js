@@ -51,7 +51,7 @@ async function run() {
     const payload = github.context.payload;
     const githubClient = github.getOctokit(accessToken);
     core.info("Request received");
-    const userName = payload.commits[0].author.username;
+    const userName = payload.pull_request.user.login;
     const owner = payload.repository.owner.login;
     const repoName = payload.repository.name;
 
